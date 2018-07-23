@@ -10,6 +10,23 @@
         event.preventDefault();
     });
 
+        // Add smooth scrolling to links
+    $(".anchor-link").on('click', function(event) {
+
+     // Prevent default anchor click behavior
+     event.preventDefault();
+
+     // Store hash
+     var hash = this.hash;
+
+     // Using jQuery's animate() method to add page scroll
+     // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+     $('html, body').animate({
+       scrollTop: $(hash).offset().top
+     }, 800);
+
+    });
+
     // Highlight the top nav as scrolling occurs
     $('body').scrollspy({
         target: '.navbar-fixed-top',
